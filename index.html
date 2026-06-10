@@ -1,128 +1,378 @@
-
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About My Family - Writing Exercise</title>
+<title>Beginner Speaking Task - Self Introduction</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background:#f4f6f9;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 30px;
+        line-height: 1.6;
+    }
 
-.container{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
 
-h1,h2{
-    color:#2c3e50;
-}
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+    }
 
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:10px;
-    margin-top:10px;
-}
+    h2 {
+        color: #34495e;
+        margin-top: 30px;
+    }
 
-input{
-    padding:8px;
-    margin:5px;
-}
+    .template-box {
+        background-color: #eef5ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
 
-button{
-    background:#3498db;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
+    textarea {
+        width: 100%;
+        min-height: 180px;
+        padding: 12px;
+        font-size: 16px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
 
-button:hover{
-    background:#2980b9;
-}
+    button {
+        margin-top: 15px;
+        padding: 12px 24px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-.correct{
-    color:green;
-    font-weight:bold;
-}
+    button:hover {
+        background-color: #2980b9;
+    }
 
-.wrong{
-    color:red;
-    font-weight:bold;
-}
+    .info {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .success {
+        color: green;
+    }
+
+    .warning {
+        color: red;
+    }
+
+    #feedback {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .timer {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        color: #2c3e50;
+    }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<hr>
+    <h1>BEGINNER SPEAKING TASK</h1>
 
-<h2>Part A: Fill in the blanks</h2>
+    <h2>Topic: Self Introduction</h2>
 
-<p>1. Kelly lives in
-<input id="q1"></p>
+    <p>
+        <strong>Instruction:</strong>
+        Introduce yourself in front of the class for
+        <strong>30–60 seconds</strong>.
+    </p>
 
-<p>2. Kelly's mother's name is
-<input id="q2"></p>
+    <h2>You Should Mention:</h2>
 
-<p>3. Kelly's father works in a
-<input id="q3"></p>
+    <ul>
+        <li>Your name</li>
+        <li>Your age</li>
+        <li>Your school</li>
+        <li>Your hobby</li>
+        <li>Where you live</li>
+    </ul>
 
-<p>4. Kelly's sister loves listening to
-<input id="q4"></p>
+    <div class="template-box">
 
-<p>5. Brandy is a pet
-<input id="q5"></p>
+        <h2>Speaking Template</h2>
 
-<button onclick="checkAnswers()">Check Answers</button>
+        <p>Hello, everyone.</p>
 
-<p id="result"></p>
+        <p>My name is __________.</p>
 
-<hr>
+        <p>I am __________ years old.</p>
 
-<h2>Part B: Write About Your Family</h2>
+        <p>I study at __________.</p>
 
-<p>Write 5–8 sentences about your family.</p>
+        <p>My hobby is __________.</p>
 
-<textarea placeholder="My name is..."></textarea>
+        <p>I live in __________.</p>
+
+        <p>Thank you.</p>
+
+    </div>
+
+    <h2>Example</h2>
+
+    <p>
+        Hello, everyone.<br><br>
+
+        My name is Sarah.<br>
+
+        I am sixteen years old.<br>
+
+        I study at SMA Harapan Bangsa.<br>
+
+        My hobby is reading novels and listening to music.<br>
+
+        I live in Denpasar, Bali.<br><br>
+
+        Thank you.
+    </p>
+
+    <h2>Prepare Your Self-Introduction</h2>
+
+    <textarea id="speech"
+    placeholder="Write your self-introduction here..."></textarea>
+
+    <div class="info">
+        Word Count: <span id="wordCount">0</span>
+    </div>
+
+    <h2>Practice Timer (60 Seconds)</h2>
+
+    <div class="timer" id="timer">60</div>
+
+    <button onclick="startTimer()">Start Timer</button>
+
+    <button onclick="resetTimer()">Reset Timer</button>
+
+    <br><br>
+
+    <button onclick="evaluateSpeech()">
+        Check My Preparation
+    </button>
+
+    <div id="feedback"></div>
+
+    <h2>Assessment Criteria</h2>
+
+    <table>
+        <tr>
+            <th>Criteria</th>
+            <th>Excellent (4)</th>
+            <th>Good (3)</th>
+            <th>Fair (2)</th>
+            <th>Needs Improvement (1)</th>
+        </tr>
+
+        <tr>
+            <td>Fluency</td>
+            <td>Speaks smoothly</td>
+            <td>Minor pauses</td>
+            <td>Frequent pauses</td>
+            <td>Unable to continue</td>
+        </tr>
+
+        <tr>
+            <td>Pronunciation</td>
+            <td>Very clear</td>
+            <td>Mostly clear</td>
+            <td>Some errors</td>
+            <td>Difficult to understand</td>
+        </tr>
+
+        <tr>
+            <td>Grammar</td>
+            <td>Accurate</td>
+            <td>Few errors</td>
+            <td>Several errors</td>
+            <td>Many errors</td>
+        </tr>
+
+        <tr>
+            <td>Content</td>
+            <td>All points included</td>
+            <td>Misses 1 point</td>
+            <td>Misses 2 points</td>
+            <td>Limited information</td>
+        </tr>
+
+    </table>
 
 </div>
 
 <script>
-function checkAnswers(){
 
-let score = 0;
+const speech = document.getElementById("speech");
+const counter = document.getElementById("wordCount");
 
-const answers = {
-q1:"california",
-q2:"carmen",
-q3:"bank",
-q4:"music",
-q5:"dog"
-};
+speech.addEventListener("input", updateCount);
 
-for(let id in answers){
-let user = document.getElementById(id).value.trim().toLowerCase();
+function updateCount() {
 
-if(user === answers[id]){
-score++;
-}
+    const words = speech.value
+        .trim()
+        .split(/\s+/)
+        .filter(word => word !== "");
+
+    counter.textContent =
+        speech.value.trim() === "" ? 0 : words.length;
 }
 
-document.getElementById("result").innerHTML =
-"You got " + score + " out of 5 correct!";
+function evaluateSpeech() {
+
+    const text = speech.value.toLowerCase();
+
+    let feedback = "<h2>Preparation Feedback</h2><ul>";
+
+    if (text.includes("my name is")) {
+
+        feedback +=
+        "<li class='success'>✓ You mentioned your name.</li>";
+
+    } else {
+
+        feedback +=
+        "<li class='warning'>✗ Include your name.</li>";
+    }
+
+    if (
+        text.includes("years old") ||
+        text.includes("i am")
+    ) {
+
+        feedback +=
+        "<li class='success'>✓ You mentioned your age.</li>";
+
+    } else {
+
+        feedback +=
+        "<li class='warning'>✗ Include your age.</li>";
+    }
+
+    if (
+        text.includes("i study at") ||
+        text.includes("my school is")
+    ) {
+
+        feedback +=
+        "<li class='success'>✓ You mentioned your school.</li>";
+
+    } else {
+
+        feedback +=
+        "<li class='warning'>✗ Include your school.</li>";
+    }
+
+    if (text.includes("my hobby is")) {
+
+        feedback +=
+        "<li class='success'>✓ You mentioned your hobby.</li>";
+
+    } else {
+
+        feedback +=
+        "<li class='warning'>✗ Include your hobby.</li>";
+    }
+
+    if (text.includes("i live in")) {
+
+        feedback +=
+        "<li class='success'>✓ You mentioned where you live.</li>";
+
+    } else {
+
+        feedback +=
+        "<li class='warning'>✗ Include where you live.</li>";
+    }
+
+    feedback += "</ul>";
+
+    document.getElementById("feedback").innerHTML = feedback;
 }
+
+/* Timer */
+
+let timeLeft = 60;
+let timer;
+
+function startTimer() {
+
+    clearInterval(timer);
+
+    timer = setInterval(function() {
+
+        document.getElementById("timer").textContent =
+        timeLeft;
+
+        timeLeft--;
+
+        if (timeLeft < 0) {
+
+            clearInterval(timer);
+
+            document.getElementById("timer").textContent =
+            "Time's Up!";
+        }
+
+    }, 1000);
+}
+
+function resetTimer() {
+
+    clearInterval(timer);
+
+    timeLeft = 60;
+
+    document.getElementById("timer").textContent =
+    "60";
+}
+
 </script>
 
 </body>
 </html>
+```
